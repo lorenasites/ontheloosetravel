@@ -1,0 +1,121 @@
+body {
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #efefef;
+  flex: 1; /* This is the magic! It makes the wrapper take up all available space */
+  display: flex; /* Make wrapper a flex container */
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.slideshow-container {
+  position: absolute; /* Essential for positioning slides */
+  z-index: -9999;
+  width: 99%; /* Adjust width as needed */
+  height: 100%;
+  left: -9.5%;
+  top: 0;
+  max-width: 200%; /* Maximum width of the slideshow */
+  height: auto;
+  margin-left: 10%;
+  background-color: #eee; /* Placeholder background */
+}
+
+.mySlides {
+  position: absolute; /* Position all slides in the same spot */
+  top: 0;
+  left: 0;
+  opacity: 0; /* All slides initially hidden */
+  transition: opacity 1.5s ease-in-out; /* Smooth fade transition */
+  /* Removed height: 100%, object-fit: cover, and border-radius */
+  width: 100%; /* Images will take 100% width of container */
+  height: auto; /* Height will adjust proportionally to maintain aspect ratio */
+  display: block; /* Ensures proper block-level behavior for image sizing */
+}
+
+.mySlides.active {
+  opacity: 1; /* Active slide is visible */
+}
+
+/* Specific styling for the #tahiti image as requested */
+#tahiti {
+  width: 100%; /* Explicitly set width to 100% */
+  /* Height will still be auto due to .mySlides rule unless overridden */
+}
+
+/* Optional: Text overlay for each slide */
+.text {
+  color: white;
+  font-size: 1.5em;
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  box-sizing: border-box;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+}
+
+/*TOP NAV LINKS*/
+#top {
+  display: flex;
+  position: relative;
+  z-index: 9999999;
+  margin-top: -17%;
+}
+
+#whiteLogoTopServices {
+  position: absolute;
+  width: 4%;
+  margin-top: -5%;
+  margin-left: 1%;
+}
+
+/*MAIN*/
+#spacer {
+  margin-top: 5%;
+  border-top: 2px dashed rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+}
+
+/*FOOTER*/
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slideshow-container {
+    width: 95%;
+    height: 300px; /* Adjust height for smaller screens */
+  }
+  .text {
+    font-size: 1.2em;
+    padding: 10px;
+  }
+  html {
+    overflow-x: hidden;
+  }
+
+  .slideshow-container {
+    position: absolute; /* Essential for positioning slides */
+    z-index: -9999;
+
+    left: -9.5%;
+    top: 0;
+
+    margin-left: 10%;
+    background-color: #eee; /* Placeholder background */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 700px;
+    object-fit: cover;
+    object-position: 60% 100%;
+    overflow-x: hidden;
+  }
+}

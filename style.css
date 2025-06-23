@@ -1,0 +1,989 @@
+html {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #efefef;
+  flex: 1; /* This is the magic! It makes the wrapper take up all available space */
+  display: flex; /* Make wrapper a flex container */
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.headermainpage {
+  margin-top: -1%;
+  margin-left: 0;
+}
+
+#tahiti {
+  width: 100%;
+}
+#top {
+  display: flexbox;
+  position: relative;
+  z-index: 9999999;
+}
+#whiteLogoTop {
+  display: block;
+  width: 4%;
+  margin-left: 2%;
+  margin-top: -55%;
+}
+
+#links {
+  display: flexbox;
+  align-items: center;
+  min-width: 700px;
+  margin-left: 45%;
+  margin-top: -4%;
+  gap: 20px;
+}
+
+a {
+  color: white;
+  margin-right: 5%;
+  font-weight: 500;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+a:hover,
+#topButton:hover {
+  color: #313352;
+}
+
+#topButton {
+  padding: 5px 20px;
+  font-size: 16px;
+  font-family: "Cormorant", serif;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+#topButton:hover {
+  border-color: #313352;
+}
+
+.title,
+.little_title {
+  color: white;
+  text-align: center;
+  font-size: 4.5rem;
+  letter-spacing: 5px;
+  font-weight: 500;
+  margin-top: 12%;
+}
+
+.little_title {
+  margin-top: 0;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: -5%;
+}
+
+/*SERVICES PAGE*/
+
+.serTitle {
+  text-align: center;
+  margin-top: 25%;
+}
+
+#whiteAnchorServices {
+  width: 12%;
+}
+
+#services {
+  font-weight: 400;
+  margin-top: -9.5%;
+  color: #313352;
+}
+.servicesBlock {
+  background-color: #e0cece;
+  display: flex;
+  flex-direction: column; /* Stack rows vertically */
+  align-items: center; /* Center the rows horizontally within this block */
+  max-width: 80%; /* Limit the overall width of the services block */
+  margin: 0 auto; /* Center the services block itself on the page */
+  padding: 20px 0;
+  margin-top: 5%;
+  box-shadow: 0 4px 10px grey;
+  color: #313352;
+}
+
+#row1,
+#row2 {
+  display: flex; /* Make each row a flex container for its tiles */
+  justify-content: center; /* Center the tiles horizontally within each row */
+  flex-wrap: wrap; /* Allow tiles to wrap on smaller screens if needed */
+  gap: 40px; /* Space between the tiles */
+  margin-bottom: 40px; /* Space between row1 and row2 */
+  width: 80%; /* Ensure rows take full available width in #servicesBlock */
+}
+
+#row1 {
+  border-top: 2px dashed rgba(255, 255, 255, 0.7);
+  padding-top: 2%;
+}
+
+#row2 {
+  margin-bottom: 0; /* No margin below the last row */
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.7);
+  padding-bottom: 2%;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center image and text vertically within the tile */
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 15px; /* Rounded corners for the tile itself */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Adjusted flex properties for better responsiveness */
+  flex: 1 1 calc((100% - (2 * 40px)) / 3); /* For 3 columns, considers 2 gaps */
+  max-width: calc(
+    (100% - (2 * 40px)) / 3
+  ); /* Ensure max-width also considers gaps */
+  box-sizing: border-box; /* Include padding in flex-basis calculation */
+}
+
+.tile:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.circlePic {
+  width: 150px; /* Set a fixed width for the image */
+  height: 150px; /* Set a fixed height for the image */
+  border-radius: 50%; /* Make the image perfectly round */
+  object-fit: cover; /* Crop image to fill the circle without distortion */
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.label {
+  font-size: 1.2em;
+  margin: 0;
+  color: #313352;
+  line-height: 1.4;
+}
+
+/*ABOUT PAGE*/
+
+#about {
+  margin-top: 10%;
+}
+
+#aboutBlock {
+  font-family: "Livvic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #313352;
+  margin-top: 7%;
+  margin-left: 5%;
+}
+
+#aboutPic {
+  display: flex;
+  position: relative;
+  margin-top: -58%;
+  margin-left: 5%;
+  width: 95%;
+  z-index: -99999999;
+}
+
+li {
+  list-style-position: inside; /* Puts the bullet inside the li's box */
+  padding-left: 1.5em; /* Adjust this value to control the overall indent of the text */
+  text-indent: -1.5em; /* This must be the negative of padding-left */
+  margin-bottom: 0.5em; /* Optional: Space between list items */
+  line-height: 1.5; /* Optional: Improve readability for wrapped lines */
+}
+
+.p1 {
+  width: 85%;
+}
+
+li.p2 {
+  width: 70%;
+}
+
+li.p3 {
+  width: 55%;
+}
+
+.p3 li {
+  margin-bottom: 15px;
+}
+
+.p4 {
+  width: 35%;
+}
+
+.p5 {
+  width: 20%;
+}
+
+/*CONTACT*/
+#contact {
+  margin-top: 8%;
+}
+
+.contactPar {
+  font-family: "Livvic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #313352;
+  margin-top: 7%;
+  margin-left: 10%;
+}
+
+input {
+  width: 25%;
+  border: none;
+  color: #313352;
+  border-radius: 10px;
+  margin-bottom: 2%;
+  padding: 5px;
+}
+
+select {
+  width: 26%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: white;
+  color: #313352;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="16" viewBox="0 0 16 16"><path fill="%23888" d="M7.646 10.354l-3-3a.5.5 0 0 1 .708-.708L8 9.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0z"/></svg>'); /* Custom dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px;
+  cursor: pointer;
+  margin-bottom: 2%;
+  border: none;
+}
+
+textarea {
+  width: 25%;
+  border: none;
+  color: #313352;
+  border-radius: 10px;
+  margin-bottom: 2%;
+  padding: 5px;
+}
+
+form {
+  font-family: "Livvic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #313352;
+  margin-top: 7%;
+  margin-left: 7%;
+  border: 2px dashed rgb(255, 255, 255);
+  padding: 5%;
+  margin-bottom: -5%;
+  width: 75%;
+}
+
+select:focus {
+  outline: none;
+  border-color: #e0cece;
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+}
+
+#send {
+  margin-top: 10%;
+  width: 40%;
+  border: none;
+  background-color: #313352;
+  border-radius: 10px;
+  margin-bottom: 2%;
+  padding: 5px;
+  font-family: "Livvic", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+}
+
+#imgs img {
+  width: 30%;
+  margin-bottom: 0;
+  margin-top: 7%;
+  margin-left: 3%;
+}
+
+#imgs {
+  display: flex;
+}
+
+#send:hover {
+  background-color: white;
+  color: #313352;
+}
+a {
+  text-decoration: none;
+}
+
+/*FOOTER*/
+
+#footermainpage {
+  /* Basic footer styling */
+  background-color: #313352;
+  color: #fff;
+  padding: 1%; /* Padding inside the footer */
+  font-size: 0.9rem;
+  margin-top: 25%;
+  /* Other footer styles you want */
+}
+
+#bottomLinks {
+  display: flexbox;
+  align-items: center;
+  min-width: 800px;
+  margin-left: 63%;
+  margin-top: -3%;
+  gap: 20px;
+}
+
+a {
+  color: white;
+  margin-right: 5%;
+  font-weight: 500;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: #e0cece;
+}
+
+#whiteLogoBottom {
+  width: 3%;
+  margin-left: 95%;
+  display: flex;
+  margin-top: -3%;
+}
+
+/* Up to 2560px */
+@media screen and (max-width: 2560px) {
+}
+
+/* Up to 1920px */
+@media screen and (max-width: 1920px) {
+}
+
+/* Up to 1440px */
+@media screen and (max-width: 1440px) {
+}
+
+/* Up to 1024px */
+@media screen and (max-width: 1024px) {
+}
+
+/* Up to 768px */
+@media screen and (max-width: 768px) {
+}
+
+/*SERVICES PAGE*/
+#jumpLinks {
+  margin-top: 0;
+  margin-left: 3%;
+  display: block;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a.linkRow {
+  color: #313352;
+  margin-top: 50%;
+  position: relative;
+  display: inline;
+}
+
+a.linkRow:hover {
+  color: white;
+}
+
+#purpleSimpleLogo {
+  width: 5%;
+  margin-top: -1%;
+  position: absolute;
+}
+
+.serviceDetailTitle {
+  margin-top: 12%;
+  background-color: #efefef;
+  color: #313352;
+  width: fit-content;
+  margin-left: 5%;
+  font-weight: 400;
+}
+
+.dashedline1 {
+  border-top: 2px dashed #e0cece;
+  margin-top: -3.5%;
+  width: 30%;
+  margin-left: 69%;
+}
+
+#dashedline2 {
+  width: 59%;
+  margin-left: 41%;
+}
+
+#dashedline3 {
+  width: 75%;
+  margin-left: 25%;
+}
+#dashedline4 {
+  width: 65%;
+  margin-left: 33%;
+}
+
+.travelPics {
+  float: right;
+  margin-top: -60%;
+  margin-right: -10%;
+}
+
+#socialPics {
+  width: 300px;
+  margin-top: -55%;
+}
+#brandingPics {
+  margin-top: -45%;
+  height: 200px;
+
+  width: 300px;
+}
+#managePics {
+  margin-top: -68%;
+  margin-right: -11%;
+  height: 200px;
+
+  width: 300px;
+}
+
+.smlTravel {
+  width: 50%; /* Image fills its floated parent (300px) */
+  height: 200px; /* Fixed height for consistent look */
+  object-fit: cover; /* Crop images to fit without distortion */
+  border-radius: 12px; /* Nicely rounded corners for images */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  display: block; /* Ensures images stack vertically one below another */
+  margin-bottom: 30px;
+}
+
+.smlTravel:hover {
+  transform: translateY(-5px); /* Slightly lift image on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+#webDevPar {
+  margin-left: 7%;
+  margin-top: 5%;
+}
+
+.littleTitle {
+  margin-bottom: 2%;
+  padding: 5px;
+  font-family: "Livvic", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #313352;
+}
+
+.servicePgPar {
+  margin-bottom: 2%;
+  padding: 5px;
+  font-family: "Livvic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #313352;
+  width: 75%;
+}
+
+.serviceList {
+  font-family: "Livvic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #313352;
+  width: 75%;
+}
+
+#inquire,
+#btnConsult {
+  width: 40%;
+  border: none;
+  background-color: #313352;
+  border-radius: 10px;
+
+  padding: 5px;
+  font-family: "Livvic", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+}
+
+#inquire:hover,
+#btnConsult:hover {
+  background-color: white;
+  color: #313352;
+}
+
+#btnConsult {
+  width: 50%;
+  margin-left: 4%;
+}
+
+#consult {
+  text-align: center;
+
+  margin-top: 4%;
+}
+
+#terms {
+  margin-top: 25%;
+  font-family: "Livvic", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #313352;
+  width: 95%;
+  padding: 3%;
+}
+
+#lastImgs {
+  margin-top: 5%;
+  margin-bottom: -15%;
+}
+
+.imgs3 {
+  width: 390px;
+  height: 280px;
+}
+
+/* MOBILE */
+@media screen and (max-width: 480px) {
+  html {
+    overflow-x: hidden;
+  }
+  #tahiti {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+    height: 700px;
+    object-fit: cover;
+    object-position: 60% 100%;
+  }
+
+  #top {
+    margin-top: -190%;
+  }
+
+  #whiteLogoTop {
+    display: none;
+  }
+  #links {
+    min-width: 0px;
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    display: inline-flex;
+    column-gap: 15px;
+    overflow: scroll;
+    margin-top: 1%;
+    margin-left: 3%;
+  }
+
+  #links > #topButton {
+    min-width: 100px;
+  }
+  .title {
+    margin-top: 35%;
+    font-size: 3.5rem;
+  }
+  .little_title {
+    font-size: 1.5rem;
+  }
+
+  .serTitle {
+    margin-top: 80%;
+  }
+  #whiteAnchorServices {
+    width: 20%;
+  }
+  #services {
+    margin-top: -19%;
+  }
+
+  .servicesBlock {
+    margin-top: 15%;
+    margin-bottom: 15%;
+  }
+
+  .tile {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+  }
+
+  #about {
+    margin-top: 25%;
+  }
+
+  #aboutBlock > p {
+    text-align: left;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #aboutBlock > li {
+    width: 88%;
+  }
+
+  #aboutBlock > .p5 {
+    width: 50%;
+  }
+
+  #aboutPicBlock {
+    margin-top: 18%;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  #imgs {
+    flex-direction: row;
+    margin-top: 15%;
+    margin-left: 0;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  #footermainpage > p {
+    margin-left: 2%;
+  }
+
+  #bottomLinks {
+    display: flexbox;
+    align-items: center;
+    margin-top: 2%;
+    align-items: left;
+    min-width: 100%;
+    margin-left: 0;
+    margin-left: 2%;
+  }
+  #whiteLogoBottom {
+    width: 9%;
+    margin-left: 47%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+
+  #footermainpage {
+    text-align: center;
+  }
+  /*SERVICES PAGE*/
+
+  #jumpLinks {
+    display: block;
+    margin-top: 180%;
+    text-align: center;
+  }
+
+  #purpleSimpleLogo {
+    width: 12%;
+  }
+  .serviceDetailTitle {
+    font-size: 1.5rem;
+    margin-left: 13%;
+  }
+
+  .dashedline1,
+  .dashedline2 .dashedline3,
+  .dashedline4,
+  .dashedline5 {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .littleTitle {
+    font-size: 1.2rem;
+  }
+
+  .travelPics {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    float: none;
+    margin-top: 5%;
+    flex-direction: row;
+    margin-top: 15%;
+    margin-left: 0;
+    overflow: hidden;
+    width: 110%;
+    margin-left: 26%;
+  }
+
+  #brandingPics,
+  #socialPics {
+    margin-top: 15%;
+  }
+
+  #noMobile {
+    display: none;
+  }
+
+  #terms {
+    margin-top: 30%;
+    font-family: "Livvic", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #313352;
+    width: 95%;
+    padding: 3%;
+  }
+}
+
+/* Between 2560px and 1920px */
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+  #whiteLogoTop {
+    width: 3%;
+  }
+  #links {
+    margin-left: 67%;
+    margin-top: -3%;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  .title {
+    font-size: 6.5rem;
+  }
+  .little_title {
+    font-size: 3.5rem;
+  }
+
+  .serTitle {
+    margin-top: 60%;
+    font-size: 2rem;
+  }
+
+  #whiteAnchorServices {
+    width: 12%;
+    margin-top: -3%;
+    margin-left: -5.5%;
+    position: absolute;
+    z-index: -1;
+  }
+  #services {
+    margin-top: -19%;
+  }
+
+  .servicesBlock {
+    margin-top: 5%;
+    margin-bottom: 15%;
+  }
+
+  .tile {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+    font-size: 2.2rem;
+  }
+
+  #about {
+    margin-top: 35%;
+  }
+
+  #aboutBlock > p {
+    font-size: 1.7rem;
+  }
+
+  #aboutBlock > li {
+    font-size: 1.7rem;
+  }
+
+  #aboutBlock > .p2,
+  .p3 {
+    width: 45%;
+  }
+  #aboutBlock > .p4 {
+    width: 30%;
+  }
+
+  #aboutPicBlock {
+    margin-top: 1%;
+  }
+
+  #contact {
+    margin-top: 35%;
+  }
+  form {
+    margin-top: 0;
+    margin-bottom: 15%;
+  }
+
+  #imgs {
+    width: 30%;
+    margin-top: -70%;
+    margin-left: 65%;
+  }
+
+  #footermainpage > p {
+    margin-left: 2%;
+  }
+
+  #bottomLinks {
+    display: flexbox;
+    align-items: center;
+    margin-top: 2%;
+    align-items: left;
+    min-width: 100%;
+    margin-left: 0;
+    margin-left: 2%;
+  }
+  #whiteLogoBottom {
+    width: 4%;
+    margin-left: 49%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+
+  #footermainpage {
+    text-align: center;
+  }
+  /*SERVICES PAGE*/
+
+  #jumpLinks {
+    display: block;
+    margin-top: 45%;
+    text-align: center;
+  }
+
+  #purpleSimpleLogo {
+    width: 5%;
+    margin-left: 2%;
+  }
+  .serviceDetailTitle {
+    font-size: 1.5rem;
+    margin-left: 7%;
+    margin-top: 10%;
+    font-size: 2.5rem;
+  }
+
+  #webDevPar > p > li {
+    font-size: 2.2rem;
+  }
+
+  .dashedline1,
+  #dashedline2,
+  #dashedline3,
+  #dashedline4,
+  #dashedline5 {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 4%;
+  }
+
+  .littleTitle {
+    font-size: 2.2rem;
+  }
+
+  .smlTravel {
+    width: 200px;
+    height: 250px;
+  }
+
+  .travelPics {
+    margin-top: -38%;
+    margin-right: 5%;
+  }
+
+  #brandingPics,
+  #socialPics,
+  #managePics {
+    margin-top: -25%;
+    margin-right: 2%;
+    width: 250px;
+    height: 300px;
+  }
+
+  #managePics {
+    margin-top: -35%;
+    margin-right: 2.5%;
+  }
+
+  #webPics {
+    margin-top: -28%;
+  }
+  #socialPics {
+    margin-top: -35%;
+  }
+
+  #spacer {
+    margin-top: 15%;
+  }
+
+  #lastImgs {
+    margin-left: 2%;
+  }
+
+  .imgs3 {
+    width: 630px;
+    height: 420px;
+  }
+
+  #terms {
+    margin-top: 30%;
+    font-family: "Livvic", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #313352;
+    width: 95%;
+    padding: 3%;
+  }
+}
