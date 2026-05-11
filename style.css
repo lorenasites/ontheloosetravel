@@ -1,0 +1,980 @@
+/* Variable Palette */
+:root {
+  --bone: #f5f1e9;
+  --sand: #d4c9b1;
+  --taupe: #9e8f7a;
+  --sage: #5d726d;
+  --slate: #313f3f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bone);
+  color: var(--slate);
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  font-style: italic;
+  padding: 1rem;
+  margin-top: 5%;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.4s ease;
+}
+
+.logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  padding-top: 2%;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--bone);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: var(--slate);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10%;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 span {
+  font-style: italic;
+}
+
+.subtitle {
+  letter-spacing: 5px;
+  font-size: 0.7rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn-primary {
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--slate);
+  text-decoration: none;
+  color: var(--slate);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--slate);
+  color: var(--bone);
+}
+
+/* Content Sections */
+.section {
+  padding: 1rem 10%;
+  text-align: center;
+}
+
+.container-narrow {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1px;
+}
+
+.service-card {
+  padding: 1rem 2rem;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.service-card:hover {
+  background-color: #fcfbf8;
+}
+
+/* Update your Hero Section CSS with these specific spotlight rules */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden; /* Keeps the image within bounds */
+  color: var(
+    --bone
+  ); /* Switching hero text to Bone for contrast against the dark car image */
+}
+
+.hero-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the car fills the screen without stretching */
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Using a gradient of your Slate color (#313F3F) to create the spotlight feel */
+  background: radial-gradient(
+    circle,
+    rgba(49, 63, 63, 0.2) 0%,
+    rgba(49, 63, 63, 0.7) 100%
+  );
+}
+
+.hero-content {
+  z-index: 10;
+  text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Adds depth to the high-end typography */
+}
+
+/* Ensure the button stays visible against the image */
+.btn-primary {
+  border: 1px solid var(--bone);
+  color: var(--bone);
+}
+
+.btn-primary:hover {
+  background-color: var(--bone);
+  color: var(--slate);
+}
+
+/* Section Background */
+/* Section Background & Container */
+#services {
+  background-image: url("img/bg.png");
+  background-size: cover;
+  background-position: center;
+
+  /* Create the overlay effect */
+  margin: -40px auto 0; /* Pulls the section up 100px over the previous one */
+  position: relative; /* Ensures it sits on top of the section above */
+  z-index: 10;
+
+  /* Restrict width to create the "box" look */
+  max-width: 1400px; /* Adjust this number to fit your design */
+  width: 90%; /* Ensures it stays smaller on mobile screens */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Optional: adds depth to the "float" */
+}
+
+#solutions.services-grid {
+  padding: 80px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  /* Smooth the edges */
+  border-radius: 4px; /* Optional: adds a very slight high-end softness */
+}
+
+/* Card Styling */
+.service-card {
+  display: flex;
+  flex-direction: column;
+
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Header Area (Beige background as seen in inspo) */
+.card-content {
+  background-color: #d4c9b1; /* Your brand darker beige */
+  padding: 25px;
+  text-align: center;
+  order: -1; /* Puts the text above the image per your inspo */
+}
+
+.service-card h3 {
+  font-family: "serif"; /* Classy high-end look */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  margin: 0;
+  color: #313f3f; /* Your brand dark charcoal */
+}
+
+/* Image container */
+.card-image img {
+  width: 248px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+
+  filter: contrast(95%); /* Softens the placeholder for a high-end feel */
+}
+
+/* Accent Line */
+.card-line {
+  width: 40px;
+  height: 2px;
+  background-color: #313f3f;
+  margin: 15px auto 0;
+}
+
+.no-list {
+  list-style-type: none; /* Removes the bullet points */
+  padding: 1rem;
+}
+
+.about-otl {
+  padding: 100px 5%;
+  background-color: #f5f1e9; /* Your brand light beige */
+  color: #313f3f; /* Your brand dark charcoal */
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.brand-subtitle {
+  font-family: "sans-serif";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  color: #9e8f7a; /* Your brand muted gold/taupe */
+  margin-bottom: 10px;
+}
+
+.brand-title {
+  font-family: "serif";
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.about-text {
+  font-family: "serif";
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  max-width: 700px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 35px;
+  background-color: #313f3f;
+  color: #f5f1e9;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  transition: opacity 0.3s ease;
+  margin-top: 20px;
+}
+
+.cta-button:hover {
+  opacity: 0.9;
+}
+
+.profile-img {
+  width: 80%;
+  max-width: 400px;
+  display: block;
+  filter: sepia(20%); /* Adds a warm, high-end travel feel */
+
+  margin-top: 15%;
+  margin-left: 15%;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.case-studies-section {
+  padding: 100px 0;
+  background-color: var(--slate); /* #313F3F from your root */
+  position: relative;
+  margin-top: 10%;
+}
+
+.case-studies-box {
+  background-color: var(--bone); /* #F5F1E9 from your root */
+  max-width: 1100px;
+  margin: -150px auto 0;
+  padding: 0 0 80px 0; /* Removed top padding to let the image hit the edge */
+  position: relative;
+  z-index: 15;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  overflow: hidden; /* Keeps the image corners crisp within the box */
+}
+
+/* Spotlight Image Styling */
+.spotlight-wrapper {
+  width: 100%;
+  height: 400px; /* Adjust height as needed for the villa shot */
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.spotlight-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the villa image fills the space beautifully */
+  filter: sepia(10%) contrast(105%); /* Soft high-end finish */
+}
+
+/* Typography Adjustments */
+.section-subtitle {
+  color: var(--taupe); /* #9E8F7A from your brand colors */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+.section-title {
+  font-family: "serif";
+  color: var(--slate); /* #313F3F */
+  font-size: 2.2rem;
+  margin-top: 10px;
+}
+
+.stat-number {
+  display: block;
+  font-family: "serif";
+  font-size: 3.5rem;
+  color: var(--slate); /* Dark numbers on light box */
+  margin-bottom: 10px;
+}
+
+.stat-desc {
+  font-family: "sans-serif";
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.summary-text {
+  font-family: "serif";
+  font-size: 1.3rem;
+  color: var(--slate);
+  margin-bottom: 30px;
+}
+
+.outline-cta {
+  display: inline-block;
+  padding: 15px 40px;
+  border: 1px solid var(--slate);
+  color: var(--slate);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.7rem;
+  transition: all 0.4s ease;
+}
+
+.outline-cta:hover {
+  background-color: var(--slate);
+  color: var(--bone);
+}
+
+.philosophy-section {
+  padding: 120px 5%;
+  background-color: var(--bone); /* #F5F1E9 */
+  color: var(--slate); /* #313F3F */
+  text-align: center;
+}
+
+.philosophy-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 60px;
+  margin-top: 60px;
+}
+
+.philosophy-item h3 {
+  font-family: "serif";
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: var(--sage); /* Adding that sophisticated green pop */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.philosophy-item p {
+  font-family: "serif";
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #555;
+  text-align: justify;
+}
+
+/* Subtle Divider */
+.philosophy-header::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background-color: var(--taupe);
+  margin: 30px auto;
+}
+
+/* Philosophy Gallery styling */
+.philosophy-gallery {
+  margin-top: 100px; /* Separates the image row from the text grid */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-row {
+  display: flex;
+  gap: 20px; /* Space between the images */
+  max-width: 1200px; /* Matches the width of your floating case study boxes */
+  width: 90%; /* For responsiveness */
+}
+
+.gallery-item {
+  flex: 1; /* Ensures they all share equal width */
+  overflow: hidden;
+  position: relative;
+
+  /* Apply the sage green background to the container */
+  background-color: var(--sage); /* #5D726D */
+  padding: 10px; /* Small inset for high-end framing effect */
+
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px; /* Fixed height to create consistent rectangles */
+  object-fit: cover; /* Ensures the image fills the space without stretching */
+  display: block;
+  filter: contrast(95%); /* Softens the image slightly */
+}
+
+/* Optional: Slight hover depth */
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.why-section {
+  background-color: var(--sage); /* #5D726D */
+  padding: 120px 5%;
+  color: var(--bone); /* #F5F1E9 - Light text for readability */
+}
+
+.why-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/* Image side styling */
+.why-image-area {
+  flex: 1;
+  position: relative;
+}
+
+.image-frame {
+  border: 1px solid rgba(245, 241, 233, 0.3); /* Subtle bone-colored border */
+  padding: 15px;
+}
+
+.side-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  filter: brightness(
+    0.9
+  ); /* Makes the image feel more integrated into the dark background */
+}
+
+/* Content side styling */
+.why-content {
+  flex: 1.2;
+}
+
+.why-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  color: var(--sand); /* #D4C9B1 for a soft gold-ish accent */
+}
+
+.why-title {
+  font-family: "serif";
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+}
+
+.perk-item {
+  margin-bottom: 30px;
+}
+
+.perk-item h3 {
+  font-family: "serif";
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--sand);
+}
+
+.perk-item p {
+  line-height: 1.7;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.why-cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 40px;
+  background-color: var(--bone);
+  color: var(--sage);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.why-cta:hover {
+  background-color: var(--slate);
+  color: var(--bone);
+}
+
+/* Mobile adjustments */
+@media (max-width: 992px) {
+  .why-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.cta-bottom {
+  background-color: var(--bone); /* #d4c9b1 */
+  padding: 120px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.cta-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-hook {
+  font-family: "serif"; /* Matches your high-end brand look */
+  font-size: 2.5rem;
+  color: var(--slate); /* #313f3f */
+  line-height: 1.2;
+  margin-bottom: 25px;
+  font-style: italic; /* Adds that "editorial" luxury touch */
+}
+
+.cta-subtext {
+  font-family: "sans-serif";
+  font-size: 1.1rem;
+  color: var(--slate);
+  opacity: 0.85;
+  margin-bottom: 45px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+
+.btn-initiate {
+  display: inline-block;
+  padding: 20px 50px;
+  background-color: var(--slate);
+  color: var(--bone); /* #f5f1e9 */
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid var(--slate);
+}
+
+.btn-initiate:hover {
+  background-color: transparent;
+  color: var(--slate);
+  transform: translateY(-3px);
+}
+
+/* Mobile responsive font scaling */
+@media (max-width: 768px) {
+  .cta-hook {
+    font-size: 1.8rem;
+  }
+}
+
+.site-footer {
+  background-color: var(--slate); /* #313F3F from brand palette */
+  padding: 80px 5% 40px;
+  color: var(--bone); /* #F5F1E9 */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Navigation Links */
+.footer-nav {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.nav-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-nav a {
+  color: var(--bone);
+  text-decoration: none;
+  font-family: "sans-serif";
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--sand); /* #D4C9B1 */
+}
+
+/* Legal text styling */
+.legal a {
+  opacity: 0.6;
+  font-size: 0.75rem;
+}
+
+.footer-copyright {
+  font-family: "serif";
+  font-size: 0.8rem;
+  opacity: 0.5;
+  letter-spacing: 0.5px;
+}
+
+/* Logo Alignment */
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo img {
+  max-width: 140px; /* Adjust based on your logo shape */
+  height: auto;
+  margin-left: -10%;
+  margin-top: -10%;
+}
+
+/* Responsive Scaling */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+/* --- Mobile Refinement (768px and below) --- */
+@media (max-width: 768px) {
+  /* Global Adjustments */
+  h1,
+  .brand-title,
+  .section-title,
+  .cta-hook {
+    font-size: 1.8rem !important; /* Scale down large headlines */
+    line-height: 1.3;
+  }
+
+  /* Services Grid Overlay */
+  #solutions.services-grid {
+    margin: -40px auto 0; /* Softer overlap for mobile */
+    width: 95%;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  /* About & Why Section Flex Fix */
+  .about-container,
+  .why-container {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about-content,
+  .why-content,
+  .about-visual,
+  .why-image-area {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Case Studies (Impact) Section */
+  .case-studies-box {
+    margin: -60px auto 0; /* Reduced pull-up */
+    padding: 0 0 40px 0;
+    width: 95%;
+  }
+
+  .spotlight-wrapper {
+    height: 250px; /* Shorter image height for mobile viewports */
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr; /* Stack stats vertically */
+    gap: 30px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  /* Philosophy Section */
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .gallery-row {
+    flex-direction: column; /* Stack the 3 sage-background rectangles */
+    gap: 15px;
+  }
+
+  .gallery-item img {
+    height: 200px; /* Slightly shorter for vertical stacking */
+  }
+
+  /* CTA & Footer */
+  .cta-bottom {
+    padding: 80px 20px;
+  }
+
+  .footer-container {
+    flex-direction: column-reverse; /* Put logo on top, links below */
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-logo img {
+    max-width: 140px;
+  }
+}
+
+/* --- Small Mobile (480px and below) --- */
+@media (max-width: 480px) {
+  .btn-initiate,
+  .why-cta,
+  .cta-button {
+    width: 100%; /* Full-width buttons for easier tapping */
+    padding: 18px 20px;
+    box-sizing: border-box;
+  }
+
+  .about-visual {
+    margin-left: -10%;
+  }
+
+  .card-image {
+    margin-left: -2.5%;
+  }
+}
+
+/* --- Sticky & Transparent Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+
+  /* Sticky Logic */
+  position: fixed; /* Fixes it to the top of the viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+
+  transition: all 0.3s ease;
+}
+
+/* Ensure the links are legible over the dark hero and light sections */
+.nav-links a {
+  text-decoration: none;
+  color: var(--bone); /* Starts as light for the hero section */
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Optional: If you find the text hard to see on light sections, 
+   the glass blur usually handles it, but you can also use a text-shadow */
+.nav-links a {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#nav-check {
+  display: none;
+}
+
+/* --- Mobile "X" and Full Screen Pop-up --- */
+@media (max-width: 768px) {
+  /* 1. Force the label to be visible and give it dimensions */
+  .hamburger-label {
+    display: flex !important; /* Overrides any desktop hidden state */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    z-index: 3001;
+    cursor: pointer;
+  }
+
+  /* 2. Ensure the individual lines have color and size */
+  .hamburger-label span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--bone); /* #f5f1e9 - contrast against the drapes */
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  /* 3. The Full Screen Menu */
+  .nav-links {
+    display: flex; /* Ensure flex is active for vertical stacking */
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--slate); /* #313f3f */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  /* 4. Open State Logic */
+  .nav-checkbox:checked ~ .nav-links {
+    right: 0;
+  }
+
+  /* 5. The "X" Animation */
+  .nav-checkbox:checked ~ .hamburger-label span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: var(--bone);
+  }
+
+  .nav-checkbox:checked ~ .hamburger-label span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-checkbox:checked ~ .hamburger-label span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: var(--bone);
+  }
+}
