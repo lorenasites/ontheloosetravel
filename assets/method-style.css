@@ -1,0 +1,908 @@
+/* Variable Palette */
+:root {
+  --bone: #f5f1e9;
+  --sand: #d4c9b1;
+  --taupe: #9e8f7a;
+  --sage: #5d726d;
+  --slate: #313f3f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bone);
+  color: var(--slate);
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  font-style: italic;
+  padding: 1rem;
+  margin-top: 5%;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.4s ease;
+}
+
+.logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  padding-top: 2%;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--bone);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: var(--slate);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10%;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 span {
+  font-style: italic;
+}
+
+.subtitle {
+  letter-spacing: 5px;
+  font-size: 0.7rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn-primary {
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--slate);
+  text-decoration: none;
+  color: var(--slate);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--slate);
+  color: var(--bone);
+}
+
+/* Content Sections */
+.section {
+  padding: 1rem 10%;
+  text-align: center;
+}
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden; /* Keeps the image within bounds */
+  color: var(
+    --bone
+  ); /* Switching hero text to Bone for contrast against the dark car image */
+}
+
+.hero-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the car fills the screen without stretching */
+  object-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Using a gradient of your Slate color (#313F3F) to create the spotlight feel */
+  background: radial-gradient(
+    circle,
+    rgba(49, 63, 63, 0.2) 0%,
+    rgba(49, 63, 63, 0.7) 100%
+  );
+}
+
+.hero-content {
+  z-index: 10;
+  text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Adds depth to the high-end typography */
+}
+
+/* Ensure the button stays visible against the image */
+.btn-primary {
+  border: 1px solid var(--bone);
+  color: var(--bone);
+}
+
+.btn-primary:hover {
+  background-color: var(--bone);
+  color: var(--slate);
+}
+
+.site-footer {
+  background-color: var(--slate); /* #313F3F from brand palette */
+  padding: 80px 5% 40px;
+  color: var(--bone); /* #F5F1E9 */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Navigation Links */
+.footer-nav {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.nav-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-nav a {
+  color: var(--bone);
+  text-decoration: none;
+  font-family: "sans-serif";
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--sand); /* #D4C9B1 */
+}
+
+/* Legal text styling */
+.legal a {
+  opacity: 0.6;
+  font-size: 0.75rem;
+}
+
+.footer-copyright {
+  font-family: "serif";
+  font-size: 0.8rem;
+  opacity: 0.5;
+  letter-spacing: 0.5px;
+}
+
+/* Logo Alignment */
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo img {
+  max-width: 140px; /* Adjust based on your logo shape */
+  height: auto;
+  margin-left: -10%;
+  margin-top: -10%;
+}
+
+/* Responsive Scaling */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+/* --- Mobile Refinement (768px and below) --- */
+@media (max-width: 768px) {
+  /* Global Adjustments */
+  h1,
+  .brand-title,
+  .section-title,
+  .cta-hook {
+    font-size: 1.8rem !important; /* Scale down large headlines */
+    line-height: 1.3;
+  }
+
+  /* Services Grid Overlay */
+  #solutions.services-grid {
+    margin: -40px auto 0; /* Softer overlap for mobile */
+    width: 95%;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  /* About & Why Section Flex Fix */
+  .about-container,
+  .why-container {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about-content,
+  .why-content,
+  .about-visual,
+  .why-image-area {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Case Studies (Impact) Section */
+  .case-studies-box {
+    margin: -60px auto 0; /* Reduced pull-up */
+    padding: 0 0 40px 0;
+    width: 95%;
+  }
+
+  .spotlight-wrapper {
+    height: 250px; /* Shorter image height for mobile viewports */
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr; /* Stack stats vertically */
+    gap: 30px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  /* Philosophy Section */
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .gallery-row {
+    flex-direction: column; /* Stack the 3 sage-background rectangles */
+    gap: 15px;
+  }
+
+  .gallery-item img {
+    height: 200px; /* Slightly shorter for vertical stacking */
+  }
+
+  /* CTA & Footer */
+  .cta-bottom {
+    padding: 80px 20px;
+  }
+
+  .footer-container {
+    flex-direction: column-reverse; /* Put logo on top, links below */
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-logo img {
+    max-width: 140px;
+  }
+}
+
+/* --- Small Mobile (480px and below) --- */
+@media (max-width: 480px) {
+  .btn-initiate,
+  .why-cta,
+  .cta-button {
+    width: 100%; /* Full-width buttons for easier tapping */
+    padding: 18px 20px;
+    box-sizing: border-box;
+  }
+
+  .about-visual {
+    margin-left: -10%;
+  }
+
+  .card-image {
+    margin-left: -2.5%;
+  }
+}
+
+/* --- Sticky & Transparent Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+
+  /* Sticky Logic */
+  position: fixed; /* Fixes it to the top of the viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+
+  transition: all 0.3s ease;
+}
+
+/* Ensure the links are legible over the dark hero and light sections */
+.nav-links a {
+  text-decoration: none;
+  color: var(--bone); /* Starts as light for the hero section */
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Optional: If you find the text hard to see on light sections, 
+   the glass blur usually handles it, but you can also use a text-shadow */
+.nav-links a {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#nav-check {
+  display: none;
+}
+
+/* --- Mobile "X" and Full Screen Pop-up --- */
+@media (max-width: 768px) {
+  /* 1. Force the label to be visible and give it dimensions */
+  .hamburger-label {
+    display: flex !important; /* Overrides any desktop hidden state */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    z-index: 3001;
+    cursor: pointer;
+  }
+
+  /* 2. Ensure the individual lines have color and size */
+  .hamburger-label span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--bone); /* #f5f1e9 - contrast against the drapes */
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  /* 3. The Full Screen Menu */
+  .nav-links {
+    display: flex; /* Ensure flex is active for vertical stacking */
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--slate); /* #313f3f */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  /* 4. Open State Logic */
+  .nav-checkbox:checked ~ .nav-links {
+    right: 0;
+  }
+
+  /* 5. The "X" Animation */
+  .nav-checkbox:checked ~ .hamburger-label span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: var(--bone);
+  }
+
+  .nav-checkbox:checked ~ .hamburger-label span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-checkbox:checked ~ .hamburger-label span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: var(--bone);
+  }
+}
+
+/* -------------------------------------------------*/
+
+.method-hero {
+  background-color: var(--bone);
+  padding: 160px 5% 100px;
+  text-align: center;
+}
+
+.method-hero h1 {
+  font-family: "serif";
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  color: var(--slate);
+}
+
+.method-hero h1 span {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.hero-line {
+  width: 1px;
+  height: 80px;
+  background-color: var(--slate);
+  margin: 40px auto;
+  opacity: 0.2;
+}
+
+.hero-sub {
+  max-width: 650px;
+  margin: 0 auto;
+  font-family: "sans-serif";
+  font-size: 1.1rem;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
+.method-stage {
+  padding: 100px 5%;
+  background-color: #fff; /* Crisp white for the 'process' feel */
+}
+
+.stage-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+}
+
+/* Sidebar Styling */
+.stage-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+}
+
+.stage-number {
+  font-family: "serif";
+  font-size: 3.5rem;
+  color: var(--sage);
+  opacity: 0.4;
+  line-height: 1;
+}
+
+.vertical-line {
+  width: 1px;
+  flex-grow: 1;
+  background-color: var(--sage);
+  opacity: 0.2;
+  margin-top: 20px;
+}
+
+/* Body Styling */
+.stage-body {
+  max-width: 700px;
+}
+
+.stage-tag {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.75rem;
+  color: var(--slate);
+  margin-bottom: 15px;
+  opacity: 0.6;
+}
+
+.stage-title {
+  font-family: "serif";
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: var(--slate);
+}
+
+.stage-description {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--slate);
+  margin-bottom: 40px;
+}
+
+.stage-insight {
+  background-color: var(--bone);
+  padding: 30px;
+  border-left: 3px solid var(--sage);
+}
+
+.stage-insight h4 {
+  font-family: "sans-serif";
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.stage-insight p {
+  font-style: italic;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .stage-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .stage-sidebar {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+  }
+  .vertical-line {
+    width: 60px;
+    height: 1px;
+    margin: 0;
+  }
+}
+
+/* Container for Stage 02 background */
+.method-stage.bone-bg {
+  background-color: var(--bone);
+}
+
+/* Image framing for the Method page */
+.method-image-frame {
+  width: 100%;
+  max-width: 450px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.method-image-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(10%) contrast(105%); /* Gives it that 'editorial' tech feel */
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.method-image-frame:hover img {
+  transform: scale(1.05);
+}
+
+/* The Code Highlight box */
+.code-highlight {
+  border: 1px solid rgba(49, 63, 63, 0.1);
+  padding: 25px;
+  margin-top: 30px;
+}
+
+.code-highlight p {
+  font-family: "sans-serif";
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  color: var(--slate);
+  opacity: 0.7;
+}
+
+/* Reverse flow for the alternating effect */
+.reverse-flow {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 992px) {
+  .reverse-flow {
+    flex-direction: column;
+  }
+  .stage-visual {
+    order: -1; /* Keep the image on top on mobile */
+    margin-bottom: 40px;
+  }
+}
+
+.stage-container {
+  display: flex;
+  align-items: flex-start; /* Keeps everything aligned at the top */
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The Text Body takes up the main space */
+.stage-body {
+  flex: 1.2;
+}
+
+/* The Visual Aside on the Right */
+.stage-visual-aside {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.method-image-frame {
+  width: 100%;
+  max-width: 450px; /* Controls the horizontal size */
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.method-image-frame:hover {
+  transform: translateY(-5px);
+}
+
+.method-image-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile: Stacks back to Vertical */
+@media (max-width: 992px) {
+  .stage-container {
+    flex-direction: column;
+  }
+
+  .stage-visual-aside {
+    order: -1; /* Puts image above text on phones for better scrolling */
+    width: 100%;
+    justify-content: center;
+  }
+
+  .method-image-frame {
+    max-width: 100%;
+  }
+}
+
+/* Ensure the white background for this section */
+.white-bg {
+  background-color: #ffffff;
+}
+
+/* Modifier for left-aligned images in the flex container */
+.left-aligned {
+  order: 0; /* Default order, but explicit for clarity */
+}
+
+/* Adjusting margins for the side-by-side feel */
+.stage-visual-aside.left-aligned {
+  margin-right: 20px;
+}
+
+/* Reuse the method-image-frame styles from Stage 01/02 
+   for consistency in shadow and transition. */
+
+/* Mobile Fix: Ensure image still stacks on top of text */
+@media (max-width: 992px) {
+  .stage-container {
+    flex-direction: column;
+  }
+
+  .stage-visual-aside.left-aligned {
+    order: -1; /* Keep visual at the top on mobile */
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+/* Final Stage Specifics */
+.sand-bg {
+  background-color: (var(--sand));
+}
+
+/* Modifier to remove the vertical line from the last item if needed via CSS */
+.stage-04 .vertical-line {
+  display: none;
+}
+
+/* Ensuring the "dark-text" helper works for this section */
+.dark-text {
+  color: var(--slate) !important;
+}
+
+.dark-border {
+  border-left: 3px solid rgba(49, 63, 63, 0.2) !important;
+}
+
+/* Extra breathing room for the final section */
+.stage-04 {
+  padding-bottom: 160px;
+}
+
+/* --- Method Page Final Section --- */
+.method-footer {
+  background-color: var(--slate);
+  padding: 120px 5%;
+  text-align: center;
+}
+
+.method-footer-wrapper {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* A subtle continuation of the vertical line theme */
+.footer-line {
+  width: 1px;
+  height: 60px;
+  background-color: var(--bone);
+  margin: 0 auto 40px;
+  opacity: 0.3;
+}
+
+.footer-label {
+  font-family: "sans-serif";
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.7rem;
+  color: var(--bone);
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+.footer-heading {
+  font-family: "serif";
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--bone);
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.footer-heading span {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.footer-text {
+  font-family: "sans-serif";
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--bone);
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+.footer-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Button & Link Styles */
+.btn-text-link {
+  color: var(--bone);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  border-bottom: 1px solid rgba(245, 241, 233, 0.3);
+  padding-bottom: 3px;
+  transition: all 0.3s ease;
+}
+
+.btn-text-link:hover {
+  opacity: 1;
+  border-bottom: 1px solid var(--bone);
+}
+
+header.method-hero {
+  /* 1. Dimensions */
+  min-height: 85vh; /* Takes up most of the screen */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  /* 2. Background Image logic */
+  /* Replace 'img/method-hero.jpg' with your actual file path */
+  background: url("img/hammok.avif") no-repeat center center;
+  background-size: cover;
+}
+
+/* 3. The "Atmosphere" Overlay */
+/* We add a pseudo-element to create that high-end 'veil' without 
+   affecting the sharpness of the text. */
+header.method-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(245, 241, 233, 0.45); /* Bone color at 45% opacity */
+  z-index: 1;
+}
+
+/* 4. Ensuring text stays on top and visible */
+header.method-hero .wrapper {
+  position: relative;
+  z-index: 2; /* Sits above the overlay */
+  text-align: center;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+/* Clean up the hero line to make sure it matches the new scale */
+.hero-line {
+  width: 1px;
+  height: 60px;
+  background-color: var(--slate);
+  margin: 30px auto;
+  opacity: 0.3;
+}
